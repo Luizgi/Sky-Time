@@ -14,7 +14,7 @@ public class CharMove : MonoBehaviour
 
     public GameObject LightAttackChar;
     public GameObject HeavyAttackChar;
-    public DialogueSystem DS;
+    public TutorialController TC;
     //public GameObject ShieldChar;
 
     public Animator Anim;
@@ -155,7 +155,7 @@ public class CharMove : MonoBehaviour
         }
         if(other.gameObject.tag == "Teste")
         {
-            DS.ShowButton();
+            TC.ShowButton();
         }
     }
 }

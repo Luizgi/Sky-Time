@@ -1,12 +1,12 @@
-using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueSystem : MonoBehaviour
+public class TutorialController : MonoBehaviour
 {
-    public GameObject TutoE;
     private bool isTutoE = false;
+    public GameObject TutoE;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +16,14 @@ public class DialogueSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
+        if(Input.GetKeyDown(KeyCode.E) &&  !isTutoE)
+        {
 
+        }
+    }
     public void ShowButton()
     {
-        isTutoE = !TutoE;
+        isTutoE = !isTutoE;
 
         if (isTutoE)
         {
@@ -32,6 +34,4 @@ public class DialogueSystem : MonoBehaviour
             TutoE.SetActive(false);
         }
     }
-
-    
 }

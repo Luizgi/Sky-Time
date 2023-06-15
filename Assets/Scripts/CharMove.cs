@@ -11,8 +11,10 @@ public class CharMove : MonoBehaviour
     public int quantityJump = 2;
     public float moveSpeed = 5f;
 
+
     public GameObject LightAttackChar;
     public GameObject HeavyAttackChar;
+    public DialogueSystem DS;
     //public GameObject ShieldChar;
 
     public Animator Anim;
@@ -26,7 +28,6 @@ public class CharMove : MonoBehaviour
         Anim = GetComponent<Animator>();
         Rb = GetComponent<Rigidbody>();
         Bc = GetComponent<BoxCollider>();
-
     }
 
     // Update is called once per frame
@@ -151,6 +152,10 @@ public class CharMove : MonoBehaviour
         if (other.gameObject.tag == "Ground")
         {
             quantityJump = 2;
+        }
+        if(other.gameObject.tag == "Teste")
+        {
+            DS.ShowButton();
         }
     }
 }

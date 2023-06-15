@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
+using UnityEditor.Timeline;
 using UnityEngine;
 
 public class CharMove : MonoBehaviour
@@ -16,6 +18,8 @@ public class CharMove : MonoBehaviour
     public Animator Anim;
     public Rigidbody Rb;
     public BoxCollider Bc;
+
+    public Transform cameraTransform;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,47 +33,50 @@ public class CharMove : MonoBehaviour
     void Update()
     {
         Move();
-        Jump();
-        LightAttack();
-        HeavyAttack();
-        Defend();
-        Roll();
-        Idle();
+       // Jump();
+       // LightAttack();
+       // HeavyAttack();
+        //Defend();
+       // Roll();
+        //Idle();
     }
 
     void Move()
     {
         float moveH = Input.GetAxis("Horizontal");
         float moveV = Input.GetAxis("Vertical");
+        
+        Vector3 CorrectedSpeed = moveH * transform.right + moveV * transform.forward;
+        Rb.velocity = new Vector3(CorrectedSpeed.x, Rb.velocity.y, CorrectedSpeed.z);
 
         Vector3 movement = new Vector3(moveH, 0f, moveV);
         movement.Normalize();
 
-        Rb.velocity = movement * moveSpeed; 
-        //Correcting Movement
-        // Vector3 CorrectedSpeed = hAxis * transform.right + vAxis * transform.forward;
-        // Rb.velocity = new Vector3(CorrectedSpeed.x, Rb.velocity.y, CorrectedSpeed.z);    
-
+        
+        Rb.velocity = movement * moveSpeed;
 
         //Animations
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.W))
+        if (Mathf.Abs(moveV) > 0)
         {
-            Anim.SetBool("IsRunning", true);
+            Anim.SetBool("IsWalking", true);
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                Rb.velocity = (movement * moveSpeed) * 2;
+                Anim.SetBool("IsRunning", true);
+            }
+            else 
+            {
+                Anim.SetBool("IsRunning", false);
+            }
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        else 
         {
-           Anim.SetBool("IsWalking", true);
+            Anim.SetBool("IsWalking", false);
+            Anim.SetBool("IsRunning", false);
         }
 
     }
 
-    void Idle()
-    {
-        if (Input.GetKeyDown(KeyCode.None))
-        {
-            Anim.SetBool("Idle", true);
-        }
-    }
     void Jump()
     {
         if (Input.GetKeyDown(KeyCode.Space))

@@ -9,7 +9,7 @@ public class PhaseManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        if(ActualPhase > 0 && ActualPhase < 7)
+        if(ActualPhase > 0 && ActualPhase < 6)
         {
             PlayerPrefs.SetInt("FASE", ActualPhase);
         }
@@ -40,11 +40,13 @@ public class PhaseManager : MonoBehaviour
 
     public void ResetScene()
     {
+        Debug.Log("ClicouResetar");
         SceneManager.LoadScene(ActualPhase);
     }
 
     public void GoToStart()
     {
+        Debug.Log("ClicouIrParInicio");
         SceneManager.LoadScene("StartScene");
     }
     

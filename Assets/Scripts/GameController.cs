@@ -24,11 +24,13 @@ public class GameController : MonoBehaviour
         {
             Time.timeScale = 0f;
             pauseMenuCanvas.SetActive(true);
+            Cursor.lockState = CursorLockMode.Locked;
         }
         else
         {
             Time.timeScale = 1f;    
-            pauseMenuCanvas.SetActive(false);   
+            pauseMenuCanvas.SetActive(false);
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

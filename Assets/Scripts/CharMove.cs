@@ -34,9 +34,9 @@ public class CharMove : MonoBehaviour
     void Update()
     {
         Move();
-       // Jump();
-       // LightAttack();
-       // HeavyAttack();
+        //Jump();
+         LightAttack();
+         HeavyAttack();
         //Defend();
        // Roll();
         //Idle();
@@ -95,16 +95,14 @@ public class CharMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            //LightAttackChar.SetActive(true);
             Anim.SetTrigger("LightAttack");
         }
     }
 
     void ActiveLightAttack()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Mouse1))
-        {
             LightAttackChar.SetActive(true);
-        }
     }
     
     void DeactiveLightAttack()
@@ -114,9 +112,12 @@ public class CharMove : MonoBehaviour
 
     //HeavyAttack
     void HeavyAttack()
-    {
-        HeavyAttackChar.SetActive(true);
-        Anim.SetTrigger("HeavyAttack");
+    {   if(Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Mouse0)) 
+        {
+            //HeavyAttackChar.SetActive(true);
+            Anim.SetTrigger("HeavyAttack");
+        }
+        
     }
 
     void ActiveHeavyAttack()

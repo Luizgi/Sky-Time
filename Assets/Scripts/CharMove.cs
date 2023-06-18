@@ -8,6 +8,15 @@ using UnityEngine.UI;
 
 public class CharMove : MonoBehaviour
 {
+    public float interactionDistance = 3f;
+    public KeyCode interactionKey = KeyCode.E;
+    public DialogueStarter dialogueStarter;
+    public DialogueManager dialogueManager;
+
+    public bool canMove = true;
+
+    [SerializeField] private GameObject interactableObject;
+
     public int actualLife;
     public int life = 100;
     public int quantityJump = 2;
@@ -47,6 +56,17 @@ public class CharMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (interactableObject != null && Input.GetKeyDown(interactionKey))
+        {
+            DialogueStarter dialogueStarter = interactableObject.GetComponent<DialogueStarter>();
+            if (dialogueStarter != null)
+            {
+                dialogueStarter.Starter(dialogueManager);
+            }
+        }
+
+
         Move();
         Jump();
         LightAttack();
@@ -172,6 +192,17 @@ public class CharMove : MonoBehaviour
         {
             RecoverHealth();
             Destroy(other.gameObject);
+        }
+        if (other.CompareTag("Interactable"))
+        {
+            interactableObject = other.gameObject;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == interactableObject)
+        {
+            interactableObject = null;
         }
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -534,6 +534,9 @@ MonoBehaviour:
   _text: {fileID: 877517783}
   _btnSkip: {fileID: 1843978173}
   _dialogueBox: {fileID: 178251196}
+  _exitButton: {fileID: 382070951}
+  CharMove: {fileID: 1382655332}
+  letterDelay: 0.05
 --- !u!1 &125431708 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2790696996311687078, guid: 5d02e5001c5c4df4d8f753137b8619ae, type: 3}
@@ -8175,6 +8178,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5538231e67160448fa684ff822beb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionDistance: 3
+  interactionKey: 101
+  dialogueStarter: {fileID: 8061542432406202508}
+  dialogueManager: {fileID: 99747928}
+  canMove: 1
+  interactableObject: {fileID: 1117072642180796170}
   actualLife: 0
   life: 100
   quantityJump: 2
@@ -8252,6 +8261,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5538231e67160448fa684ff822beb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionDistance: 3
+  interactionKey: 101
+  dialogueStarter: {fileID: 0}
+  dialogueManager: {fileID: 0}
+  canMove: 1
+  interactableObject: {fileID: 0}
   actualLife: 0
   life: 100
   quantityJump: 2
@@ -13171,7 +13186,7 @@ GameObject:
   - component: {fileID: 8061542432406202508}
   m_Layer: 0
   m_Name: TestePlate
-  m_TagString: Teste
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13275,6 +13290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogue:
-    _phrase: []
-    _npcName: 
+    _phrase:
+    - _phrase: E o cheiro hein hein hein???
+      _btnSkip: btn
+    _npcName: Plate
   _manager: {fileID: 99747928}

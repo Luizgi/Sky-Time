@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PhaseManager : MonoBehaviour
 {
     public int ActualPhase;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -38,4 +39,8 @@ public class PhaseManager : MonoBehaviour
 
     }
 
+    public void Credits()
+    {
+        SceneManager.LoadScene("creditsScene");
+    }
 }

@@ -7,6 +7,7 @@ using UnityEngine;
 public class DialogueText 
 {
     [SerializeField]
+    [TextArea(1,4)]
     private string _phrase;
     [SerializeField]
     private string _btnSkip;

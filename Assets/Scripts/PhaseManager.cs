@@ -38,20 +38,4 @@ public class PhaseManager : MonoBehaviour
 
     }
 
-    public void ResetScene()
-    {
-        Debug.Log("ClicouResetar");
-        SceneManager.LoadScene(ActualPhase);
-    }
-
-    public void GoToStart()
-    {
-        Debug.Log("ClicouIrParInicio");
-        SceneManager.LoadScene("StartScene");
-    }
-    
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
 }

@@ -1,7 +1,10 @@
 using System.Collections;
+using System;
+using UnityEngine.Events;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class Dialogue
 {
     [SerializeField]
@@ -9,6 +12,8 @@ public class Dialogue
 
     [SerializeField]
     private string _npcName;
+
+    [SerializeField]
     public DialogueText[] GetPhrase()
     {
         return _phrase;

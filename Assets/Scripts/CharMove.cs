@@ -4,27 +4,41 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEditor.Timeline;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharMove : MonoBehaviour
 {
+    public int actualLife;
     public int life = 100;
     public int quantityJump = 2;
     public float moveSpeed = 5f;
+    public int coin = 0;
+    private bool AbilityActive = false;
+    public int SwordDamage = 10;
+    public int ArrowDamage = 5;
+    public int ArrowMax = 10;
 
+    public Image lifebar;
+    public Image redbar;
 
-    public GameObject LightAttackChar;
-    public GameObject HeavyAttackChar;
-    public TutorialController TC;
+    [SerializeField] private int lifeToRecover = 20;
+    [SerializeField] private GameObject Ability;
+    [SerializeField] private GameObject LightAttackChar;
+    [SerializeField] private GameObject HeavyAttackChar;
+    [SerializeField] private GameObject ShieldChar;
+    [SerializeField] private TutorialController TC;
     //public GameObject ShieldChar;
 
-    public Animator Anim;
-    public Rigidbody Rb;
-    public BoxCollider Bc;
+    private Animator Anim;
+    private Rigidbody Rb;
+    private BoxCollider Bc;
+    private AudioListener AL;
 
     public Transform cameraTransform;
     // Start is called before the first frame update
     void Start()
     {
+        actualLife = life;
         Anim = GetComponent<Animator>();
         Rb = GetComponent<Rigidbody>();
         Bc = GetComponent<BoxCollider>();
@@ -34,12 +48,11 @@ public class CharMove : MonoBehaviour
     void Update()
     {
         Move();
-        //Jump();
-         LightAttack();
-         HeavyAttack();
-        //Defend();
-       // Roll();
-        //Idle();
+        Jump();
+        LightAttack();
+        HeavyAttack();
+        Defend();
+        OpenAbility();
     }
 
     void Move()
@@ -50,7 +63,12 @@ public class CharMove : MonoBehaviour
         Vector3 CorrectedSpeed = moveH * transform.right + moveV * transform.forward;
         Rb.velocity = new Vector3(CorrectedSpeed.x, Rb.velocity.y, CorrectedSpeed.z);
 
-        Vector3 movement = new Vector3(moveH, 0f, moveV);
+        Vector3 cameraForward = cameraTransform.forward;
+        cameraForward.y = 0f;
+        Vector3 cameraRight = cameraTransform.right;
+        cameraRight.y = 0f;
+
+        Vector3 movement = moveH * cameraRight.normalized + moveV * cameraForward.normalized;
         movement.Normalize();
 
         
@@ -84,8 +102,8 @@ public class CharMove : MonoBehaviour
         {
             Rb.AddForce(Vector3.up * 400);
             quantityJump--;
-            Anim.SetTrigger("IsJumping");
-            Debug.Log("Pulou");
+            
+           
         }
     }
 
@@ -132,21 +150,12 @@ public class CharMove : MonoBehaviour
 
    void Defend()
    {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            //  ShieldChar.SetActive(true);
-            Anim.SetBool("Defending", true);
-        }
-   }
-
-    void Roll()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.W))
-        {
-            Rb.AddForce(Vector3.forward * 330);
-            Anim.SetTrigger("Roll");
-        }
+        bool isDefending = Input.GetMouseButton(1);
+        
+        Anim.SetBool("Defending", isDefending);
     }
+
+
     
     public void OnTriggerEnter(Collider other)
     {
@@ -158,5 +167,70 @@ public class CharMove : MonoBehaviour
         {
             TC.ShowButton();
         }
+
+        if (other.CompareTag("Heart"))
+        {
+            RecoverHealth();
+            Destroy(other.gameObject);
+        }
     }
+
+    private void OpenAbility()
+    {
+        if(Input.GetKeyDown(KeyCode.Tab) && AbilityActive == false)
+        {
+            Ability.SetActive(true);
+            AbilityActive = true;
+        }
+        else if(Input.GetKeyDown(KeyCode.Tab) && AbilityActive == true)
+        {
+            Ability.SetActive(false);
+            AbilityActive = false;
+        }
+    }
+    
+    public void SetHealth(int amount)
+    {
+        actualLife = Mathf.Clamp(actualLife + amount, 0, life);
+
+        Vector3 lifebarScale = lifebar.rectTransform.localScale;
+        lifebarScale.x = (float)actualLife / life;
+        lifebar.rectTransform.localScale = lifebarScale;
+        StartCoroutine(DecreasingRedBar(lifebarScale));
+    }
+
+    IEnumerator DecreasingRedBar(Vector3 newScale)
+    {
+        yield return new WaitForSeconds(0.5f);
+        Vector3 redBarScale = redbar.transform.localScale;
+        Debug.Log(Time.time);
+
+        while(redbar.transform.localScale.x > newScale.x)
+        {
+            redBarScale.x -= Time.deltaTime * 0.25f;
+            redbar.transform.localScale = redBarScale;
+
+            yield return null;
+        }
+
+        redbar.transform.localScale = newScale;
+      
+    }
+
+    public int GetHealth()
+    {
+        return actualLife;
+    }
+
+    public int GetCoin()
+    {
+        return coin;
+    }
+
+    private void RecoverHealth()
+    {
+        SetHealth(lifeToRecover);
+    }
+
+
 }

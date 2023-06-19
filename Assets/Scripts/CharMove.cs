@@ -8,14 +8,14 @@ using UnityEngine.UI;
 
 public class CharMove : MonoBehaviour
 {
-    public float interactionDistance = 3f;
-    public KeyCode interactionKey = KeyCode.E;
-    public DialogueStarter dialogueStarter;
-    public DialogueManager dialogueManager;
-
+    //public float interactionDistance = 3f;
+    //public KeyCode interactionKey = KeyCode.E;
+    //public GerenciadorDeDialogo dialogueManager;
+    public bool isDialoguing = false;
     public bool canMove = true;
 
     [SerializeField] private GameObject interactableObject;
+    [SerializeField] private GameObject visualEffect;
 
     public int actualLife;
     public int life = 100;
@@ -26,6 +26,7 @@ public class CharMove : MonoBehaviour
     public int SwordDamage = 10;
     public int ArrowDamage = 5;
     public int ArrowMax = 10;
+    public float maxDistance = 10f;
 
     public Image lifebar;
     public Image redbar;
@@ -44,6 +45,9 @@ public class CharMove : MonoBehaviour
     private AudioListener AL;
 
     public Transform cameraTransform;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,27 +61,18 @@ public class CharMove : MonoBehaviour
     void Update()
     {
 
-        if (interactableObject != null && Input.GetKeyDown(interactionKey))
-        {
-            DialogueStarter dialogueStarter = interactableObject.GetComponent<DialogueStarter>();
-            if (dialogueStarter != null)
-            {
-                dialogueStarter.Starter(dialogueManager);
-            }
-        }
-
-
-        Move();
-        Jump();
-        LightAttack();
-        HeavyAttack();
-        Defend();
+            Move();
+            Jump();
+            LightAttack();
+            HeavyAttack();
+            Defend(); 
         OpenAbility();
     }
 
     void Move()
     {
-        float moveH = Input.GetAxis("Horizontal");
+       
+             float moveH = Input.GetAxis("Horizontal");
         float moveV = Input.GetAxis("Vertical");
         
         Vector3 CorrectedSpeed = moveH * transform.right + moveV * transform.forward;
@@ -114,8 +109,10 @@ public class CharMove : MonoBehaviour
             Anim.SetBool("IsRunning", false);
         }
 
-    }
+    
 
+        }
+       
     void Jump()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -133,27 +130,28 @@ public class CharMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            //LightAttackChar.SetActive(true);
             Anim.SetTrigger("LightAttack");
+            Attack();
         }
     }
 
     void ActiveLightAttack()
     {
-            LightAttackChar.SetActive(true);
+        LightAttackChar.SetActive(true);
     }
-    
     void DeactiveLightAttack()
     {
         LightAttackChar.SetActive(false);
     }
 
+   
+
     //HeavyAttack
     void HeavyAttack()
     {   if(Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Mouse0)) 
         {
-            //HeavyAttackChar.SetActive(true);
             Anim.SetTrigger("HeavyAttack");
+            Attack();
         }
         
     }
@@ -163,9 +161,34 @@ public class CharMove : MonoBehaviour
         HeavyAttackChar.SetActive(true);
     }
 
+
+
     void DeactiveHeavyAttack()
     {
         HeavyAttackChar.SetActive(false);
+    }
+
+    private void Attack()
+    {
+        Vector3 attackPosition = transform.position;
+
+        Vector3 attackDirection = transform.forward;
+        RaycastHit hit;
+
+        if(Physics.Raycast(attackPosition, attackDirection, out hit, maxDistance))
+        {
+            GameObject hitObject = hit.collider.gameObject;
+            Vector3 hitPoint = hit.point;
+            Vector3 hitNormal = hit.normal;
+
+            Debug.Log("Objeto atingido: " + hitObject.name);
+            Debug.Log("Ponto de colisão: " + hitPoint);
+            Debug.Log("Normal da superfície: " + hitNormal);
+        }
+        else
+        {
+            Debug.Log("Nenhum objeto atingido");
+        }
     }
 
    void Defend()
@@ -175,8 +198,17 @@ public class CharMove : MonoBehaviour
         Anim.SetBool("Defending", isDefending);
     }
 
+    void ActiveDefense()
+    {
+        ShieldChar.SetActive(true);
+    }
 
-    
+    void DeactiveDefense()
+    {
+        ShieldChar.SetActive(false);
+    }
+
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Ground")
@@ -188,14 +220,20 @@ public class CharMove : MonoBehaviour
             TC.ShowButton();
         }
 
-        if (other.CompareTag("Heart"))
+        /*if (other.CompareTag("Heart"))
         {
             RecoverHealth();
             Destroy(other.gameObject);
-        }
+        }*/
+         
         if (other.CompareTag("Interactable"))
         {
             interactableObject = other.gameObject;
+        }
+
+        if (other.CompareTag("Beholder"))
+        {
+            Debug.Log("Colidiu");
         }
     }
     private void OnTriggerExit(Collider other)
@@ -263,5 +301,13 @@ public class CharMove : MonoBehaviour
         SetHealth(lifeToRecover);
     }
 
+    public int SetSwordDamage()
+    {
+        return SwordDamage;
+    }
 
+    public int SetArrowDamage()
+    {
+        return ArrowDamage;
+    }
 }

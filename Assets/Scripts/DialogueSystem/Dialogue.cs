@@ -1,27 +1,84 @@
 using System.Collections;
-using System;
-using UnityEngine.Events;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class Dialogue
+public class Dialogue : MonoBehaviour
 {
-    [SerializeField]
-    private DialogueText[] _phrase;
+    public Sprite profile;
+    public string[] speechTxt;
+    public string actorName;
 
-    [SerializeField]
-    private string _npcName;
-
-    [SerializeField]
-    public DialogueText[] GetPhrase()
+    [SerializeField] private int radius;
+    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] public DialogueController controller;
+    public float proximityDistance = 5f;
+    bool onRadius;
+    // Start is called before the first frame update
+    void Start()
     {
-        return _phrase;
+        controller = FindObjectOfType<DialogueController>();
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && onRadius) 
+        {
+            controller.Speech(profile, speechTxt, actorName);
+        }
     }
 
-    public string GetNameNpc()
+    // Update is called once per frame
+    private void FixedUpdate()
     {
-        return _npcName;
+        //Interact();
+        Interact3D(proximityDistance);
+    }
+
+
+    //Metodo Para jogo 2D
+    /*public void Interact2D()
+    {
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
+
+        if (hit != null)
+        {
+            onRadius = true;
+            Debug.Log("Entrou Na Area");
+        }
+        else
+        {
+            onRadius = false;
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, radius);
+    }
+    */
+    public void Interact3D(float distance)
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Character");
+
+        if (player != null)
+        {
+            float playerDistance = Vector3.Distance(transform.position, player.transform.position);
+
+            if (playerDistance <= distance)
+            {
+                onRadius = true;
+                Debug.Log("Player está dentro da distância permitida");
+            }
+            else
+            {
+                onRadius = false;
+                Debug.Log("Player está fora da distância permitida");
+            }
+        }
+        else
+        {
+            onRadius = false;
+            Debug.Log("Player não encontrado");
+        }
     }
 
 }

@@ -79,4 +79,9 @@ public class GameController : MonoBehaviour
         Settings.SetActive(false);
         Resume();
     }
+
+    public void Clicou()
+    {
+        Debug.Log("ClicouNoButão");
+    }
 }

@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Teste
   - Interactable
+  - FxTemporaire
+  - LightAttack
+  - HeavyAttack
+  - Beholder
+  - Character
   layers:
   - Default
   - TransparentFX
@@ -13,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - PlayerLayer
   - 
   - 
   - 

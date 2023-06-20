@@ -7,6 +7,7 @@ public class MovableRock : MonoBehaviour
     public float moveSpeed = 5f;
     public float maxDistance = 10f;
     public Animator characterAnimator;
+    public LayerMask obstacleLayer; // Camadas consideradas obstáculos
 
     private Rigidbody rb;
     private Vector3 initialPosition;
@@ -37,14 +38,14 @@ public class MovableRock : MonoBehaviour
                 moveDirection.y = 0f;
                 moveDirection.Normalize();
 
-                // Move a pedra usando o Rigidbody
-                rb.velocity = moveDirection * moveSpeed;
-
-                // Verifica a distância em relação ao jogador
-                float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
-
-                // Verifica se a pedra atingiu a distância máxima
-                if (distanceToPlayer >= maxDistance)
+                // Verifica se há uma pedra na frente bloqueando o caminho
+                RaycastHit hit;
+                if (!Physics.Raycast(transform.position, moveDirection, out hit, maxDistance, obstacleLayer))
+                {
+                    // Move a pedra usando o Rigidbody
+                    rb.velocity = moveDirection * moveSpeed;
+                }
+                else
                 {
                     StopMovingRock();
                 }
@@ -52,34 +53,32 @@ public class MovableRock : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Character"))
         {
             rb.isKinematic = false;
+            characterAnimator.SetBool("Pushing", true);
+            currentRock = gameObject; // Define a pedra atualmente sendo empurrada
+            isMoving = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Character"))
+        if (other.CompareTag("Character") && currentRock == gameObject)
         {
-            rb.isKinematic = true;
+            StopMovingRock();
         }
     }
 
     private void StopMovingRock()
     {
-        if (currentRock != null)
-        {
-            rb.velocity = Vector3.zero; // Para a pedra quando atinge a distância máxima
-            currentRock = null;
-            rb = null;
+        rb.velocity = Vector3.zero; // Para a pedra quando atinge a distância máxima
+        rb.isKinematic = true;
+        characterAnimator.SetBool("Pushing", false);
 
-            isMoving = false;
-
-            // Reinicia a animação do personagem
-            characterAnimator.SetBool("IsPushing", false);
-        }
+        currentRock = null;
+        isMoving = false;
     }
 }

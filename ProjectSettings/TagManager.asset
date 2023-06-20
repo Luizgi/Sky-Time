@@ -12,11 +12,17 @@ TagManager:
   - Beholder
   - Character
   - CharSword
+  - Coin
+  - NextPhase
+  - CameraUp
+  - NormalCamera
+  - Slippery
+  - Stone
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstacle
   - Water
   - UI
   - PlayerLayer

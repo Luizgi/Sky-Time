@@ -17,6 +17,11 @@ public class CharMove : MonoBehaviour
     [SerializeField] private GameObject interactableObject;
     [SerializeField] private GameObject visualEffect;
 
+    public string SlipperyTag = "Slippery";
+
+    private Vector3 movementDirection;
+    private bool isSlipperyActivated = false;
+
     public int actualLife;
     public int life = 100;
     public int quantityJump = 2;
@@ -37,12 +42,17 @@ public class CharMove : MonoBehaviour
     [SerializeField] private GameObject HeavyAttackChar;
     [SerializeField] private GameObject ShieldChar;
     [SerializeField] private TutorialController TC;
+    [SerializeField] private PhaseManager PM;
+    [SerializeField] private GameObject CameraUp;
+    [SerializeField] private GameObject MyCam;
     //public GameObject ShieldChar;
 
     private Animator Anim;
     private Rigidbody Rb;
     private BoxCollider Bc;
-    private AudioListener AL;
+    private AudioSource AL;
+  //  [SerializeField] private GameObject audioObject;
+    public AudioClip coinCollectSound;
 
     public Transform cameraTransform;
 
@@ -50,7 +60,8 @@ public class CharMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+      
+        AL = GetComponent<AudioSource>();
         actualLife = life;
         Anim = GetComponent<Animator>();
         Rb = GetComponent<Rigidbody>();
@@ -68,11 +79,26 @@ public class CharMove : MonoBehaviour
             Defend(); 
             OpenAbility();
     }
+    private void FixedUpdate()
+    {
+        if (!isSlipperyActivated)
+        {
+            return;
+        }
 
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        // Calcular a direção do movimento
+        movementDirection = new Vector3(moveHorizontal, 0f, moveVertical).normalized;
+
+        // Aplicar força ao Rigidbody para mover o personagem
+        Rb.AddForce(movementDirection * 10f);
+    }
     void Move()
     {
        
-             float moveH = Input.GetAxis("Horizontal");
+        float moveH = Input.GetAxis("Horizontal");
         float moveV = Input.GetAxis("Vertical");
         
         Vector3 CorrectedSpeed = moveH * transform.right + moveV * transform.forward;
@@ -215,7 +241,7 @@ public class CharMove : MonoBehaviour
         {
             quantityJump = 2;
         }
-        if(other.gameObject.tag == "Teste")
+        if (other.gameObject.tag == "Teste")
         {
             TC.ShowButton();
         }
@@ -225,7 +251,7 @@ public class CharMove : MonoBehaviour
             RecoverHealth();
             Destroy(other.gameObject);
         }*/
-         
+
         if (other.CompareTag("Interactable"))
         {
             interactableObject = other.gameObject;
@@ -234,6 +260,35 @@ public class CharMove : MonoBehaviour
         if (other.CompareTag("Beholder"))
         {
             Debug.Log("Colidiu");
+        }
+
+        if (other.CompareTag("Coin"))
+        {
+            coin++;
+
+            if (coinCollectSound != null)
+            {
+                AL.PlayOneShot(coinCollectSound);
+            }
+            Debug.Log("Coletou");
+            Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("NextPhase"))
+        {
+            Debug.Log("Passou");
+            PM.PassPhase(); ;
+        }
+        if (other.CompareTag("CameraUp"))
+        {
+            CameraUp.SetActive(true);
+            MyCam.SetActive(false);
+        }
+
+        if (other.CompareTag("NormalCamera"))
+        {
+            CameraUp.SetActive(false);
+            MyCam.SetActive(true);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -244,7 +299,28 @@ public class CharMove : MonoBehaviour
         }
     }
 
-    private void OpenAbility()
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!isSlipperyActivated)
+        {
+            // Verificar se colidiu com um objeto Slippery
+            if (collision.gameObject.CompareTag(SlipperyTag))
+            {
+                isSlipperyActivated = true;
+            }
+        }
+        else
+        {
+            // Verificar se colidiu com uma pedra
+            if (collision.gameObject.CompareTag("Stone"))
+            {
+                // Parar o movimento
+                Rb.velocity = Vector3.zero;
+            }
+        }
+    }
+
+        private void OpenAbility()
     {
         if(Input.GetKeyDown(KeyCode.Tab) && AbilityActive == false)
         {

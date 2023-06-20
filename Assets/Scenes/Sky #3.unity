@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -399,6 +399,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (43)
@@ -481,6 +485,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (62)
@@ -551,6 +559,111 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5114996075067899094, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
   m_PrefabInstance: {fileID: 50028174}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &76803696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 76803700}
+  - component: {fileID: 76803699}
+  - component: {fileID: 76803698}
+  - component: {fileID: 76803697}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: CameraUp
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!65 &76803697
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76803696}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &76803698
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76803696}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &76803699
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76803696}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &76803700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76803696}
+  m_LocalRotation: {x: -0, y: -0.73612386, z: -0, w: 0.6768469}
+  m_LocalPosition: {x: 58.94, y: 6.634, z: -105.95}
+  m_LocalScale: {x: 8.23, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: -94.805, z: 0}
 --- !u!1001 &93484534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -563,6 +676,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (60)
@@ -633,6 +750,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5114996075067899094, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
   m_PrefabInstance: {fileID: 93484534}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &97506651
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5109403136624452442, guid: 76dbc00a8f9728e4cbd625d751a1e546, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109403136624452442, guid: 76dbc00a8f9728e4cbd625d751a1e546, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 50.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109403136624452442, guid: 76dbc00a8f9728e4cbd625d751a1e546, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109403136624452442, guid: 76dbc00a8f9728e4cbd625d751a1e546, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -107.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109403136624452442, guid: 76dbc00a8f9728e4cbd625d751a1e546, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.72668785
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109403136624452442, guid: 76dbc00a8f9728e4cbd625d751a1e546, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109403136624452442, guid: 76dbc00a8f9728e4cbd625d751a1e546, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6869679
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109403136624452442, guid: 76dbc00a8f9728e4cbd625d751a1e546, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109403136624452442, guid: 76dbc00a8f9728e4cbd625d751a1e546, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109403136624452442, guid: 76dbc00a8f9728e4cbd625d751a1e546, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 86.781
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109403136624452442, guid: 76dbc00a8f9728e4cbd625d751a1e546, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228736056063152217, guid: 76dbc00a8f9728e4cbd625d751a1e546, type: 3}
+      propertyPath: m_Name
+      value: DogPolyart
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7228736056063152217, guid: 76dbc00a8f9728e4cbd625d751a1e546, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 987936074}
+  m_SourcePrefab: {fileID: 100100000, guid: 76dbc00a8f9728e4cbd625d751a1e546, type: 3}
 --- !u!1001 &98000988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -699,142 +880,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8569049185289328770, guid: b24af410a59a0cc4c8f01f3ad358b943, type: 3}
   m_PrefabInstance: {fileID: 98000988}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &98988658
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 98988661}
-  - component: {fileID: 98988660}
-  - component: {fileID: 98988659}
-  - component: {fileID: 98988662}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &98988659
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98988658}
-  m_Enabled: 1
---- !u!20 &98988660
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98988658}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &98988661
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98988658}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &98988662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98988658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
-  m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
 --- !u!1001 &105241383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1243,6 +1288,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (50)
@@ -1325,6 +1374,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (54)
@@ -1407,6 +1460,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (1)
@@ -1670,6 +1727,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (61)
@@ -1814,9 +1875,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 167486667}
     m_Modifications:
+    - target: {fileID: -5945461244219793500, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_Name
       value: Coin (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_TagString
+      value: Coin
       objectReference: {fileID: 0}
     - target: {fileID: 4834854334325795838, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_RootOrder
@@ -1884,6 +1953,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (24)
@@ -1966,6 +2039,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (16)
@@ -2044,9 +2121,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 167486667}
     m_Modifications:
+    - target: {fileID: -5945461244219793500, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_Name
       value: Coin (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_TagString
+      value: Coin
       objectReference: {fileID: 0}
     - target: {fileID: 4834854334325795838, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_RootOrder
@@ -2180,6 +2265,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (45)
@@ -2262,6 +2351,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (47)
@@ -2344,6 +2437,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (65)
@@ -2927,6 +3024,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (13)
@@ -3339,6 +3440,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (48)
@@ -3421,6 +3526,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (59)
@@ -3767,6 +3876,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (6)
@@ -3981,6 +4094,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (30)
@@ -4063,6 +4180,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (34)
@@ -4211,6 +4332,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (51)
@@ -4293,6 +4418,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (55)
@@ -4375,6 +4504,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (29)
@@ -4478,7 +4611,7 @@ Transform:
   - {fileID: 1567403655}
   - {fileID: 167486667}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &575591515
 PrefabInstance:
@@ -4492,6 +4625,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (67)
@@ -4574,6 +4711,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (38)
@@ -4656,6 +4797,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (73)
@@ -4804,6 +4949,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (2)
@@ -4886,6 +5035,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (33)
@@ -4968,6 +5121,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (46)
@@ -5154,6 +5311,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (63)
@@ -5302,6 +5463,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (68)
@@ -5372,6 +5537,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5114996075067899094, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
   m_PrefabInstance: {fileID: 656088444}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &669108872
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1370440267485180455, guid: 58e4da44ef128b74594ed2259483b9c9, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370440267485180455, guid: 58e4da44ef128b74594ed2259483b9c9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 572.8935
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370440267485180455, guid: 58e4da44ef128b74594ed2259483b9c9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 40.869133
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370440267485180455, guid: 58e4da44ef128b74594ed2259483b9c9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -20.257568
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370440267485180455, guid: 58e4da44ef128b74594ed2259483b9c9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370440267485180455, guid: 58e4da44ef128b74594ed2259483b9c9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370440267485180455, guid: 58e4da44ef128b74594ed2259483b9c9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370440267485180455, guid: 58e4da44ef128b74594ed2259483b9c9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370440267485180455, guid: 58e4da44ef128b74594ed2259483b9c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370440267485180455, guid: 58e4da44ef128b74594ed2259483b9c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370440267485180455, guid: 58e4da44ef128b74594ed2259483b9c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584529579398907280, guid: 58e4da44ef128b74594ed2259483b9c9, type: 3}
+      propertyPath: m_Name
+      value: DialogueController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 58e4da44ef128b74594ed2259483b9c9, type: 3}
 --- !u!1001 &670053460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5384,6 +5610,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (53)
@@ -5730,6 +5960,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (72)
@@ -6084,6 +6318,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (49)
@@ -6228,9 +6466,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 167486667}
     m_Modifications:
+    - target: {fileID: -5945461244219793500, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_Name
       value: Coin (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_TagString
+      value: Coin
       objectReference: {fileID: 0}
     - target: {fileID: 4834854334325795838, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_RootOrder
@@ -6298,6 +6544,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (18)
@@ -6380,6 +6630,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (15)
@@ -6461,7 +6715,7 @@ GameObject:
   - component: {fileID: 820031306}
   m_Layer: 0
   m_Name: Slippery
-  m_TagString: Untagged
+  m_TagString: Slippery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6634,6 +6888,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (28)
@@ -7178,6 +7436,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (5)
@@ -7656,6 +7918,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (26)
@@ -7726,6 +7992,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5114996075067899094, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
   m_PrefabInstance: {fileID: 986938754}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &987936068 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7228736056063152217, guid: 76dbc00a8f9728e4cbd625d751a1e546, type: 3}
+  m_PrefabInstance: {fileID: 97506651}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &987936074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987936068}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d721ed1a65ee39248967b2f3ea499157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slipperyTag: Slippery
 --- !u!1001 &990195342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7738,6 +8022,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (11)
@@ -7952,6 +8240,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (3)
@@ -8166,6 +8458,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (40)
@@ -8310,9 +8606,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 167486667}
     m_Modifications:
+    - target: {fileID: -5945461244219793500, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_Name
       value: Coin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_TagString
+      value: Coin
       objectReference: {fileID: 0}
     - target: {fileID: 4834854334325795838, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_RootOrder
@@ -8578,6 +8882,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (52)
@@ -8660,6 +8968,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (10)
@@ -8979,6 +9291,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (58)
@@ -9193,6 +9509,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (41)
@@ -9341,6 +9661,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (8)
@@ -9423,6 +9747,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (14)
@@ -9571,6 +9899,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (23)
@@ -9653,6 +9985,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (70)
@@ -10065,6 +10401,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (4)
@@ -10147,6 +10487,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (42)
@@ -10291,9 +10635,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 167486667}
     m_Modifications:
+    - target: {fileID: -5945461244219793500, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_Name
       value: Coin (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_TagString
+      value: Coin
       objectReference: {fileID: 0}
     - target: {fileID: 4834854334325795838, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_RootOrder
@@ -10361,6 +10713,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile
@@ -10509,6 +10865,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (74)
@@ -10657,6 +11017,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (17)
@@ -10805,6 +11169,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (39)
@@ -10887,6 +11255,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (9)
@@ -10969,6 +11341,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (36)
@@ -11198,7 +11574,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &1332830367
 MonoBehaviour:
@@ -11367,6 +11743,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (32)
@@ -11581,6 +11961,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (21)
@@ -11659,8 +12043,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 167486667}
     m_Modifications:
+    - target: {fileID: -5945461244219793500, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_Name
+      value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
     - target: {fileID: 4834854334325795838, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
@@ -11729,6 +12121,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (27)
@@ -11811,6 +12207,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (71)
@@ -12025,6 +12425,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (44)
@@ -12103,9 +12507,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 167486667}
     m_Modifications:
+    - target: {fileID: -5945461244219793500, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_Name
       value: Coin (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_TagString
+      value: Coin
       objectReference: {fileID: 0}
     - target: {fileID: 4834854334325795838, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_RootOrder
@@ -12305,6 +12717,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (7)
@@ -12441,6 +12857,111 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5114996075067899094, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
   m_PrefabInstance: {fileID: 1462776613}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1467274058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1467274062}
+  - component: {fileID: 1467274061}
+  - component: {fileID: 1467274060}
+  - component: {fileID: 1467274059}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: NormalCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!65 &1467274059
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467274058}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1467274060
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467274058}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1467274061
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467274058}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1467274062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467274058}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 67.52, y: 6.634, z: -103.01}
+  m_LocalScale: {x: 4.2710404, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1479757454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12783,6 +13304,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (66)
@@ -13066,6 +13591,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (25)
@@ -13202,6 +13731,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8250593785596600116, guid: b84103262dbd8cd48a0d67046bee6366, type: 3}
   m_PrefabInstance: {fileID: 1575542129}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1576546493
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2785380029897141727, guid: f9c6df9bfcc04014bb359fb93a421e39, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785380029897141727, guid: f9c6df9bfcc04014bb359fb93a421e39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 76.399414
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785380029897141727, guid: f9c6df9bfcc04014bb359fb93a421e39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 22.330256
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785380029897141727, guid: f9c6df9bfcc04014bb359fb93a421e39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -732.65045
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785380029897141727, guid: f9c6df9bfcc04014bb359fb93a421e39, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785380029897141727, guid: f9c6df9bfcc04014bb359fb93a421e39, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785380029897141727, guid: f9c6df9bfcc04014bb359fb93a421e39, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785380029897141727, guid: f9c6df9bfcc04014bb359fb93a421e39, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785380029897141727, guid: f9c6df9bfcc04014bb359fb93a421e39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785380029897141727, guid: f9c6df9bfcc04014bb359fb93a421e39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785380029897141727, guid: f9c6df9bfcc04014bb359fb93a421e39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396698252140192735, guid: f9c6df9bfcc04014bb359fb93a421e39, type: 3}
+      propertyPath: m_Name
+      value: UIs
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f9c6df9bfcc04014bb359fb93a421e39, type: 3}
 --- !u!1001 &1583313055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13210,9 +13800,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 167486667}
     m_Modifications:
+    - target: {fileID: -5945461244219793500, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_Name
       value: Coin (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_TagString
+      value: Coin
       objectReference: {fileID: 0}
     - target: {fileID: 4834854334325795838, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_RootOrder
@@ -13466,6 +14064,107 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3907522310404650416, guid: 162d2f8f57192a14ab9278fc56faf57e, type: 3}
   m_PrefabInstance: {fileID: 1632316711}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1639353545
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8117241694518438505, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_Name
+      value: DialogueBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597509481072575084, guid: d90a06de49fae4341b4e535010816c44, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d90a06de49fae4341b4e535010816c44, type: 3}
 --- !u!1001 &1667789402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13544,6 +14243,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (22)
@@ -13754,9 +14457,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 167486667}
     m_Modifications:
+    - target: {fileID: -5945461244219793500, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_Name
       value: Coin (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_TagString
+      value: Coin
       objectReference: {fileID: 0}
     - target: {fileID: 4834854334325795838, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_RootOrder
@@ -13956,6 +14667,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (37)
@@ -14104,6 +14819,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (56)
@@ -14582,6 +15301,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (12)
@@ -14730,6 +15453,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (31)
@@ -15058,9 +15785,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 167486667}
     m_Modifications:
+    - target: {fileID: -5945461244219793500, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_Name
       value: Coin (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589153120599550245, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
+      propertyPath: m_TagString
+      value: Coin
       objectReference: {fileID: 0}
     - target: {fileID: 4834854334325795838, guid: ac78353ace64acb4683bc65eb61c7de0, type: 3}
       propertyPath: m_RootOrder
@@ -15656,6 +16391,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (64)
@@ -16134,6 +16873,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (69)
@@ -16254,6 +16997,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (35)
@@ -16421,7 +17168,7 @@ Transform:
   - {fileID: 636467453}
   - {fileID: 2039397450}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2082855222
 PrefabInstance:
@@ -16501,6 +17248,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (20)
@@ -16583,6 +17334,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (19)
@@ -16797,6 +17552,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f5f020ffc1973f14c8a0114c0e3f87ea, type: 2}
+    - target: {fileID: -827054248398038937, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 9ee5a1ed9e52a7046865d81185067af8, type: 3}
       propertyPath: m_Name
       value: IceTile (57)

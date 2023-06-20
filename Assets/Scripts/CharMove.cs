@@ -47,10 +47,10 @@ public class CharMove : MonoBehaviour
     public Transform cameraTransform;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
+
         actualLife = life;
         Anim = GetComponent<Animator>();
         Rb = GetComponent<Rigidbody>();
@@ -66,7 +66,7 @@ public class CharMove : MonoBehaviour
             LightAttack();
             HeavyAttack();
             Defend(); 
-        OpenAbility();
+            OpenAbility();
     }
 
     void Move()

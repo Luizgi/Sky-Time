@@ -2047,6 +2047,7 @@ MonoBehaviour:
   canMove: 1
   interactableObject: {fileID: 0}
   visualEffect: {fileID: 0}
+  SlipperyTag: Slippery
   actualLife: 0
   life: 100
   quantityJump: 2
@@ -2064,6 +2065,10 @@ MonoBehaviour:
   HeavyAttackChar: {fileID: 8536214136653682665}
   ShieldChar: {fileID: 8269326888343757081}
   TC: {fileID: 0}
+  PM: {fileID: 0}
+  CameraUp: {fileID: 0}
+  MyCam: {fileID: 0}
+  coinCollectSound: {fileID: 8300000, guid: f3a7a933c7691264695a782e78142d46, type: 3}
   cameraTransform: {fileID: 5411970991154146892}
 --- !u!65 &742482866018063409
 BoxCollider:

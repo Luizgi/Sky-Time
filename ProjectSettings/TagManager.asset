@@ -18,6 +18,7 @@ TagManager:
   - NormalCamera
   - Slippery
   - Stone
+  - DieLine
   layers:
   - Default
   - TransparentFX

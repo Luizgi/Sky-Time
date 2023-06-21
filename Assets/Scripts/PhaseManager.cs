@@ -43,5 +43,9 @@ public class PhaseManager : MonoBehaviour
     {
         SceneManager.LoadScene("creditsScene");
     }
+    public void OpenForms()
+    {
+        Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLScD373Ow7rOe8GV2WnWdY-pnxJNs1XFYNmVtcK8-7dkMcIYhQ/viewform?usp=sf_link");
+    }
 
 }

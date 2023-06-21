@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
-using UnityEditor.Timeline;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -79,7 +78,7 @@ public class CharMove : MonoBehaviour
             Defend(); 
             OpenAbility();
     }
-    private void FixedUpdate()
+   /* private void FixedUpdate()
     {
         if (!isSlipperyActivated)
         {
@@ -90,11 +89,12 @@ public class CharMove : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
 
         // Calcular a direção do movimento
-        movementDirection = new Vector3(moveHorizontal, 0f, moveVertical).normalized;
+        //
+        //movementDirection = new Vector3(moveHorizontal, 0f, moveVertical).normalized;
 
         // Aplicar força ao Rigidbody para mover o personagem
-        Rb.AddForce(movementDirection * 10f);
-    }
+       // Rb.AddForce(movementDirection * 10f);
+    }*/
     void Move()
     {
        
@@ -112,8 +112,9 @@ public class CharMove : MonoBehaviour
         Vector3 movement = moveH * cameraRight.normalized + moveV * cameraForward.normalized;
         movement.Normalize();
 
-        
-        Rb.velocity = movement * moveSpeed;
+        movement = movement * moveSpeed;
+        //Rb.velocity = movement * moveSpeed;
+        Rb.velocity = new Vector3(movement.x, Rb.velocity.y, movement.z);
 
         //Animations
         if (Mathf.Abs(moveV) > 0)
@@ -121,7 +122,7 @@ public class CharMove : MonoBehaviour
             Anim.SetBool("IsWalking", true);
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                Rb.velocity = (movement * moveSpeed) * 2;
+                Rb.velocity = (movement * moveSpeed);
                 Anim.SetBool("IsRunning", true);
             }
             else 
@@ -143,7 +144,8 @@ public class CharMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Rb.AddForce(Vector3.up * 400);
+            Rb.AddForce(Vector3.up * 1000
+                );
             quantityJump--;
             
            
@@ -289,6 +291,12 @@ public class CharMove : MonoBehaviour
         {
             CameraUp.SetActive(false);
             MyCam.SetActive(true);
+        }
+        if (other.CompareTag("DieLine"))
+        {
+            life--;
+          //  SetHealth(10);
+            PM.Fase(PM.ActualPhase);
         }
     }
     private void OnTriggerExit(Collider other)

@@ -144,8 +144,7 @@ public class CharMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Rb.AddForce(Vector3.up * 1000
-                );
+            Rb.AddForce(Vector3.up * 100);
             quantityJump--;
             
            
@@ -209,13 +208,13 @@ public class CharMove : MonoBehaviour
             Vector3 hitPoint = hit.point;
             Vector3 hitNormal = hit.normal;
 
-            Debug.Log("Objeto atingido: " + hitObject.name);
+          /*  Debug.Log("Objeto atingido: " + hitObject.name);
             Debug.Log("Ponto de colisão: " + hitPoint);
-            Debug.Log("Normal da superfície: " + hitNormal);
+            Debug.Log("Normal da superfície: " + hitNormal);*/
         }
         else
         {
-            Debug.Log("Nenhum objeto atingido");
+           /* Debug.Log("Nenhum objeto atingido");*/
         }
     }
 
@@ -261,7 +260,7 @@ public class CharMove : MonoBehaviour
 
         if (other.CompareTag("Beholder"))
         {
-            Debug.Log("Colidiu");
+            
         }
 
         if (other.CompareTag("Coin"))

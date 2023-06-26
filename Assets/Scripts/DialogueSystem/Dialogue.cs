@@ -66,18 +66,16 @@ public class Dialogue : MonoBehaviour
             if (playerDistance <= distance)
             {
                 onRadius = true;
-                Debug.Log("Player está dentro da distância permitida");
+               
             }
             else
             {
                 onRadius = false;
-                Debug.Log("Player está fora da distância permitida");
             }
         }
         else
         {
             onRadius = false;
-            Debug.Log("Player não encontrado");
         }
     }
 

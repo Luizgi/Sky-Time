@@ -75,8 +75,7 @@ public class CharMove : MonoBehaviour
             Move();
             Jump();
             LightAttack();
-            HeavyAttack();
-            Defend(); 
+            HeavyAttack(); 
             OpenAbility();
     }
    /* private void FixedUpdate()
@@ -143,9 +142,9 @@ public class CharMove : MonoBehaviour
        
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.JoystickButton0))
         {
-            Rb.AddForce(Vector3.up * 100);
+            Rb.AddForce(Vector3.up * 300);
             quantityJump--;
             
            
@@ -156,7 +155,7 @@ public class CharMove : MonoBehaviour
     //LightAttack
     void LightAttack()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.JoystickButton1 ))
         {
             Anim.SetTrigger("LightAttack");
             Attack();
@@ -176,7 +175,7 @@ public class CharMove : MonoBehaviour
 
     //HeavyAttack
     void HeavyAttack()
-    {   if(Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Mouse0)) 
+    {   if(Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.JoystickButton1) && Input.GetKeyDown(KeyCode.JoystickButton4)) 
         {
             Anim.SetTrigger("HeavyAttack");
             Attack();
@@ -219,12 +218,6 @@ public class CharMove : MonoBehaviour
         }
     }
 
-   void Defend()
-   {
-        bool isDefending = Input.GetMouseButton(1);
-        
-        Anim.SetBool("Defending", isDefending);
-    }
 
     void ActiveDefense()
     {
@@ -325,9 +318,25 @@ public class CharMove : MonoBehaviour
                 Rb.velocity = Vector3.zero;
             }
         }
+
+        if (collision.gameObject.CompareTag("Platformer"))
+        {
+            //isCharacterOnPlatform = true;
+            //characterTransform = collision.transform;
+            Debug.Log("tocou");
+            transform.parent = collision.gameObject.transform;
+        }
     }
 
-        private void OpenAbility()
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Platformer"))
+        {
+            transform.parent = null;
+        }
+    }
+    private void OpenAbility()
     {
         if(Input.GetKeyDown(KeyCode.Tab) && AbilityActive == false)
         {

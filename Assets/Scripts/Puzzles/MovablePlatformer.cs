@@ -13,6 +13,8 @@ public class MovablePlatform : MonoBehaviour
     private bool isCharacterOnPlatform = false;
     private Transform characterTransform;
 
+
+
     private void Start()
     {
         initialPosition = transform.position;
@@ -46,21 +48,16 @@ public class MovablePlatform : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Character"))
-        {
-            isCharacterOnPlatform = true;
-            characterTransform = collision.transform;
-        }
-    }
+
 
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Character"))
         {
-            isCharacterOnPlatform = false;
-            characterTransform = null;
+            //isCharacterOnPlatform = false;
+            //characterTransform = null;
+
+
         }
     }
 

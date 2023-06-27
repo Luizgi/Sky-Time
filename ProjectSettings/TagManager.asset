@@ -19,6 +19,7 @@ TagManager:
   - Slippery
   - Stone
   - DieLine
+  - Platformer
   layers:
   - Default
   - TransparentFX

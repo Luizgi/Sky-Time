@@ -1329,27 +1329,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5538231e67160448fa684ff822beb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDialoguing: 0
-  canMove: 1
-  interactableObject: {fileID: 0}
-  visualEffect: {fileID: 0}
-  SlipperyTag: Slippery
-  actualLife: 0
-  life: 100
-  quantityJump: 2
   moveSpeed: 5
-  coin: 0
+  quantityJump: 2
   SwordDamage: 10
   ArrowDamage: 5
   ArrowMax: 10
-  maxDistance: 10
-  lifebar: {fileID: 0}
-  redbar: {fileID: 0}
-  lifeToRecover: 20
-  Ability: {fileID: 0}
   LightAttackChar: {fileID: 18011351635220489}
   HeavyAttackChar: {fileID: 6379018595880403144}
   ShieldChar: {fileID: 5608908910712226260}
+  actualLife: 0
+  life: 100
+  lifeToRecover: 20
+  lifebar: {fileID: 0}
+  redbar: {fileID: 0}
+  Ability: {fileID: 0}
+  interactableObject: {fileID: 0}
+  isDialoguing: 0
+  canMove: 1
+  visualEffect: {fileID: 0}
+  SlipperyTag: Slippery
+  coin: 0
+  maxDistance: 10
   TC: {fileID: 0}
   PM: {fileID: 0}
   CameraUp: {fileID: 0}
@@ -2616,14 +2616,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6887678554429219752}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 0.93, z: -1.463}
+  m_LocalRotation: {x: 0.09405369, y: -0, z: -0, w: 0.99556714}
+  m_LocalPosition: {x: 0.005, y: 1.918, z: -3.419}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2066896392038131574}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10.794, y: 0, z: 0}
 --- !u!20 &7292125341492130673
 Camera:
   m_ObjectHideFlags: 0

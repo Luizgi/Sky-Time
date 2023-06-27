@@ -7,52 +7,53 @@ using UnityEngine.UI;
 
 public class CharMove : MonoBehaviour
 {
-    //public float interactionDistance = 3f;
-    //public KeyCode interactionKey = KeyCode.E;
-    //public GerenciadorDeDialogo dialogueManager;
-    public bool isDialoguing = false;
-    public bool canMove = true;
-
-    [SerializeField] private GameObject interactableObject;
-    [SerializeField] private GameObject visualEffect;
-
-    public string SlipperyTag = "Slippery";
-
-    private Vector3 movementDirection;
-    private bool isSlipperyActivated = false;
-
-    public int actualLife;
-    public int life = 100;
-    public int quantityJump = 2;
+    [Header("Movement")]
     public float moveSpeed = 5f;
-    public int coin = 0;
-    private bool AbilityActive = false;
+    public int quantityJump = 2;
+    private Rigidbody Rb;
+    private Animator Anim;
+
+    [Header("Combat")]
     public int SwordDamage = 10;
     public int ArrowDamage = 5;
     public int ArrowMax = 10;
-    public float maxDistance = 10f;
-
-    public Image lifebar;
-    public Image redbar;
-
-    [SerializeField] private int lifeToRecover = 20;
-    [SerializeField] private GameObject Ability;
     [SerializeField] private GameObject LightAttackChar;
     [SerializeField] private GameObject HeavyAttackChar;
     [SerializeField] private GameObject ShieldChar;
+
+    [Header("Health")]
+    public int actualLife;
+    public int life = 100;
+    [SerializeField] private int lifeToRecover = 20;
+    public Image lifebar;
+    public Image redbar;
+
+    [Header("Abilities")]
+    [SerializeField] private GameObject Ability;
+    private bool AbilityActive = false;
+
+    [Header("Interactions")]
+    [SerializeField] private GameObject interactableObject;
+    public bool isDialoguing = false;
+    public bool canMove = true;
+    //public float interactionDistance = 3f;
+    //public KeyCode interactionKey = KeyCode.E;
+    //public GerenciadorDeDialogo dialogueManager;
+    [Header("Miscellaneous")]
+    [SerializeField] private GameObject visualEffect;
+    public string SlipperyTag = "Slippery";
+    private Vector3 movementDirection;
+    private bool isSlipperyActivated = false;
+    public int coin = 0;
+    public float maxDistance = 10f;
     [SerializeField] private TutorialController TC;
     [SerializeField] private PhaseManager PM;
     [SerializeField] private GameObject CameraUp;
     [SerializeField] private GameObject MyCam;
-    //public GameObject ShieldChar;
-
-    private Animator Anim;
-    private Rigidbody Rb;
+    //public GameObject ShieldChar
     private BoxCollider Bc;
     private AudioSource AL;
-  //  [SerializeField] private GameObject audioObject;
     public AudioClip coinCollectSound;
-
     public Transform cameraTransform;
 
 
@@ -294,7 +295,7 @@ public class CharMove : MonoBehaviour
         if (other.CompareTag("DieLine"))
         {
             life--;
-          //  SetHealth(10);
+            SetHealth(10);
             PM.Fase(PM.ActualPhase);
         }
     }
@@ -392,5 +393,11 @@ public class CharMove : MonoBehaviour
     public int SetArrowDamage()
     {
         return ArrowDamage;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        actualLife -= damage;
+        SetHealth(0); // Atualiza a barra de vida
     }
 }

@@ -12,6 +12,8 @@ public class Beholder : MonoBehaviour
     private Vector3 initialPosition;
     private bool isChasing = false;
 
+
+    public ParticleSystem ps;
     public string enemyName;
     public int attackDamage;
     public int health;
@@ -19,7 +21,7 @@ public class Beholder : MonoBehaviour
     public float attackRange;
     public float dodgeChance;
     public float followRadius = 10f; // Raio de distância para começar a seguir o personagem
-    public float hitForce = 100f; // Força de empurrão quando tomar dano
+    public float hitForce = 10f; // Força de empurrão quando tomar dano
 
     private void Start()
     {
@@ -30,6 +32,7 @@ public class Beholder : MonoBehaviour
 
     private void Awake()
     {
+        attackDamage = 15;
         health = 50;
     }
 
@@ -83,12 +86,24 @@ public class Beholder : MonoBehaviour
 
             if (charMove != null)
             {
-                charMove.actualLife -= attackDamage;
+                charMove.TakeDamage(attackDamage);
             }
         }
-        else if (other.CompareTag("CharSword"))
+        else if (other.CompareTag("LightAttack"))
         {
             health -= cm.SwordDamage;
+            animator.SetTrigger("getHit");
+
+            // Aplicar força de empurrão para trás
+            Vector3 hitDirection = transform.position - other.transform.position;
+            hitDirection.y = 0f;
+            hitDirection.Normalize();
+            rb.AddForce(hitDirection * hitForce, ForceMode.Impulse);
+            ps.Play();
+        }
+        else if (other.CompareTag("HeavyAttack"))
+        {
+            health -= cm.SwordDamage * 2;
             animator.SetTrigger("getHit");
 
             // Aplicar força de empurrão para trás

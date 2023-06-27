@@ -16,17 +16,6 @@ public class AbilitiesToBuy : MonoBehaviour
     [SerializeField] private bool Space = false;
     [SerializeField] private bool Druid = false;
     [SerializeField] private bool Rage = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void aBerserk()
     {
@@ -48,6 +37,7 @@ public class AbilitiesToBuy : MonoBehaviour
 
     public void aDeathKnight()
     {
+        Debug.Log("Apertou");
         if (character.coin >= 10)
         {
             character.SwordDamage = 25;

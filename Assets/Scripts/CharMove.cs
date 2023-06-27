@@ -294,8 +294,7 @@ public class CharMove : MonoBehaviour
         }
         if (other.CompareTag("DieLine"))
         {
-            life--;
-            SetHealth(10);
+            TakeDamage(5);
             PM.Fase(PM.ActualPhase);
         }
     }

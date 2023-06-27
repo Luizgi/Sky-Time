@@ -6,27 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/StartMenu.unity
+    path: Assets/Scripts/Scenes/StartMenu.unity
     guid: 311e43046ea069740a09e747a19b3b53
   - enabled: 0
-    path: Assets/Scenes/Tutorial.unity
+    path: Assets/Scripts/Scenes/Tutorial.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Sky #1.unity
+    path: Assets/Scripts/Scenes/Sky #1.unity
     guid: 9bee7e46400bd264b9ef8e0b720d1d21
   - enabled: 1
-    path: Assets/Scenes/Sky #2.unity
+    path: Assets/Scripts/Scenes/Sky #2.unity
     guid: 1eae81ef944575f45ac2fb138dc1d4dc
   - enabled: 1
-    path: Assets/Scenes/Sky #3.unity
+    path: Assets/Scripts/Scenes/Sky #3.unity
     guid: 3857d1132320c204f97bea5408e1b668
   - enabled: 1
-    path: Assets/Scenes/Sky #4.unity
+    path: Assets/Scripts/Scenes/Sky #4.unity
     guid: 30d8f2ce04067164e92544788bdf6dd6
   - enabled: 0
-    path: Assets/Scenes/Sky #5.unity
+    path: Assets/Scripts/Scenes/Sky #5.unity
     guid: 6efc1d3e3ae2b8746acf80556186f25a
   - enabled: 0
-    path: Assets/Scenes/Teste.unity
+    path: Assets/Scripts/Scenes/Teste.unity
     guid: eaf705cc553288c4db2ae8d609a6cbf2
   m_configObjects: {}
